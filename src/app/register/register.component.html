@@ -1,0 +1,119 @@
+<html>
+
+<head>
+    <title>
+        Login
+    </title>
+   
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> 
+  
+    
+</head>
+<body>
+    <br>
+    <br>
+<div class="container register">
+    <div class="row">
+        <br>
+        <div class="col-md-6 mb-3">
+            <img src="../assets/bank2.jpg" class="img-fluid" alt="Image"/>
+        </div>
+        <div class="col-md-6 mb-3 bg-light">
+            
+            <h3>Register</h3>
+
+
+            <form [formGroup]="myForm" (ngSubmit)="register()"> 
+
+                <div  class="text-danger"></div>
+                       
+                       <div class="form-group">
+                       <p>email</p>
+                        <input type="email" class="form-control" placeholder="email" [(ngModel)]="user.email" pattern= "^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" [formControl]="email">
+                        <span class="text-danger"
+                            *ngIf="(email.touched && email.errors?.required)">
+                           
+                             email should not empty
+                        </span>
+
+                        <span class="text-danger"
+                        *ngIf="(email.errors?.pattern)">
+                       
+                         email should be in correct format
+                    </span>
+
+
+
+                    </div>
+
+                    <div class="form-group">
+                        <p>name</p>
+                         <input type="text" class="form-control"placeholder="name" [(ngModel)]="user.name" [formControl]="name">
+                         <span class="text-danger"
+                             *ngIf="(name.touched && name.errors?.required)">
+                            
+                             name is required
+                         </span>
+                     </div>
+
+                        <div class="form-group">
+                        <p> Address</p>
+                        <input type="text" class="form-control" placeholder="address" [(ngModel)]="user.address" [formControl]="address" >
+                        <span class="text-danger"  *ngIf="(address.touched && address.errors?.required)">
+                            address cannot be empty
+                        </span>
+                          </div>
+
+                          <div class="form-group">
+
+                        
+                        
+                        <p> Phone number</p>
+                        <input type="tel" class="form-control" placeholder="phone"  minlength="10" maxlength="10" pattern="[6-9]{1}[0-9]{9}" [(ngModel)]="user.phone" [formControl]="phone" required>
+                        <span class="text-danger"   *ngIf="(phone.touched && phone.errors?.required)">
+                            phone cannot be empty
+                        </span>
+
+                        
+                        <span class="text-danger"
+                        *ngIf="(phone.errors?.pattern)">
+                       
+                         phone should be in correct format
+                    </span> 
+
+                     </div>
+
+                        <div class="form-group">
+                        <p> password</p>
+                        <input type="password" class="form-control" placeholder="password"  [(ngModel)]="user.password"  [formControl]="pass" >
+                        <span class="text-danger"   *ngIf="(pass.touched && pass.errors?.required)">
+                            password cannot be empty
+                        </span>
+                         </div>
+     
+               
+            <div class="form-group">
+             
+                 <input type="submit" value="submit" class="btn btn-warning btn-block"  [disabled]="myForm.invalid"/> 
+                 
+            </div>
+            <div class="alert alert-info" role="alert">
+                Sign up |<a href="/login" >click here to login</a>
+                </div>
+        </form>
+    </div>
+  
+</div>
+<br>
+</div>
+<br>
+<br>
+</body>
+</html>
+
+    

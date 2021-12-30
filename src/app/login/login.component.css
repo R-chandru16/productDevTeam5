@@ -1,0 +1,18 @@
+
+ img {
+    display: block;
+    max-width:500px;
+    max-height:800px;
+    width: 599px;
+    height: 399px;
+
+
+}
+
+    .login{
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        background-color: #00ac96;
+        /* margin: 7%; */
+        width: 1200px;
+
+    }

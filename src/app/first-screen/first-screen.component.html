@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+
+    <body>
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <h1>Kanini Bank </h1>
+                
+            </div>
+            </div>
+
+
+        <br>
+        <br>
+        <div class="container-fluid ">
+            <div class="row">
+             <div class="col-sm-6">
+                <form class="for" [formGroup]="mygroup" (ngSubmit)="onSubmit()" enctype="multipart/form-data" style="margin-top:50px">
+                    <div class="text-center">
+                        <input style="width:600px;" (click)="update()" class="form-control" type="file" (change)="handleFileInput($event)" [formControl]="file" >
+                        <br>
+                        <button type="submit"
+                            class="btn btn-success m-6">
+                            Upload
+                        </button>
+                    </div>
+            
+                 </form>
+                 <div class="container" style="display: flex;flex-direction:column;width: 500px;margin-top: 50px;float: left;margin-left: 120px;">
+                 <p style="text-align: left;"  [id]="ss">Name : {{names}} </p>
+                 <p style="text-align: left;"  [id]="ss">Branch :{{branch}}</p>
+                 <p style="text-align: justify;" [id]="ss">Address :{{address}}</p>
+                </div>
+             </div>
+             <div class="col-sm-6">
+                <div class="btn">
+                    <button class="btn btn-success" type="button" (click)="getBar()" [id]="ss">Number of Credits and Debits</button> &nbsp;&nbsp;&nbsp;
+                    <button class="btn btn-success" (click)="getPie()" [id]="ss"> Withdrawl and Deposit</button>&nbsp;&nbsp;&nbsp;
+                    <button class="btn btn-success" (click)="getHist()" [id]="ss">Highest Deposited amount</button>
+                </div>  
+                    <div class="jumbotron text-center img" [id]="ss">
+                    <img [src]="imageToShow" [id]="style">
+                    </div>
+             </div>
+            </div>
+        </div>
+        
+     <br>
+    </body>
+
+    
+    
+</html>
